@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" sizes="32x32" href="icon.png">
+    <title>nochronic</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Font for modern rounded look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        html {
+            font-family: 'Nunito', system-ui, -apple-system, blinkmacsystemfont, 'Segoe UI', roboto, 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        /* Brand palette */
+        :root {
+            --brand-green: #5ecdb9; /* teal-ish */
+            --brand-blue: #2e5f8f; /* navy */
+            --brand-white: #f8f9fa; /* off-white */
+        }
+
+        .logo-green { color: var(--brand-green); }
+        .logo-blue  { color: var(--brand-blue);  }
+        .logo-white { color: var(--brand-white); }
+
+        /* Background ambience */
+        .hero-glow {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background: radial-gradient(ellipse at 25% 60%, rgba(45,212,191,0.23) 0%, rgba(15,23,42,0) 60%),
+                        radial-gradient(ellipse at 75% 40%, rgba(37,99,235,0.23) 0%, rgba(15,23,42,0) 60%);
+            filter: blur(110px);
+        }
+
+        pre { @apply bg-slate-800 rounded-lg p-4 overflow-auto text-sm; }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-100 antialiased leading-relaxed">
+    <!-- ================== Navigation ================== -->
+    <header class="fixed top-0 inset-x-0 z-50 backdrop-blur bg-slate-900/70 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Branded text in nav -->
+                <a href="#" class="text-2xl sm:text-3xl font-medium tracking-tight select-none">
+                    <img src="icon.png" alt="nochronic logo" style="width: 32px; height: 32px; display: inline-block; margin-right: 10px"><span class="logo-green"></span><span class="logo-white">nochronic</span>
+                </a>
+
+                <nav class="hidden md:flex gap-8 text-sm font-semibold">
+                    <a href="#mission" class="hover:text-teal-300 transition">Mission</a>
+                    <a href="#solutions" class="hover:text-teal-300 transition">Solutions</a>
+                    <a href="#contact" class="hover:text-teal-300 transition">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- ================== Hero ================== -->
+    <section class="relative flex items-center justify-center min-h-screen text-center px-6" id="hero">
+        <div class="hero-glow"></div>
+        <div class="relative z-10 max-w-3xl">
+            <h1 class="text-6xl md:text-8xl font-medium tracking-tight select-none flex justify-center">
+                <span class="logo-green"></span><span class="logo-white">nochronic</span>
+            </h1>
+            <p class="mt-8 text-lg md:text-2xl text-slate-300 max-w-xl mx-auto">
+                Decoding diseases with AI
+            </p>
+            <a href="#solutions" class="mt-12 inline-block px-9 py-3 rounded-full bg-gradient-to-r from-teal-500 to-blue-600 hover:from-teal-400 hover:to-blue-500 focus:outline-none focus:ring-4 focus:ring-teal-500/50 font-semibold transition">
+                Explore our Virtual Cell
+            </a>
+        </div>
+    </section>
+
+    <!-- ================== Mission ================== -->
+    <section id="mission" class="py-24 px-6 bg-slate-900">
+        <div class="max-w-5xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Our Mission</h2>
+            <p class="text-lg text-slate-300">
+                The root causes of most chronic diseases are unknown and there is no cure.<br />
+                Our mission is to figure out the root causes of chronic diseases and find a cure.
+            </p>
+        </div>
+    </section>
+
+    <!-- ================== Product: Virtual Cell ================== -->
+    <section id="solutions" class="py-24 px-6 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-5xl mx-auto">
+            <header class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold">Virtual Cell</h2>
+                <p class="mt-4 text-lg text-slate-400 max-w-3xl mx-auto">
+                    A sandbox for hypothesis-driven discovery: simulate gene expression perturbations and observe their effects on cellular systems.
+                </p>
+                
+                <!-- CTA moved here, immediately visible -->
+                <a href="https://app.nochronic.pl" 
+                   class="mt-8 inline-block px-9 py-3 rounded-full bg-gradient-to-r from-teal-500 to-blue-600 hover:from-teal-400 hover:to-blue-500 focus:outline-none focus:ring-4 focus:ring-teal-500/50 font-semibold transition">
+                    Launch Virtual Cell →
+                </a>
+                <p class="mt-3 text-sm text-slate-500">Try the interactive demo</p>
+            </header>
+
+            <!-- Key Features -->
+            <div class="grid gap-12 md:grid-cols-2">
+                <div class="space-y-8">
+                    <h3 class="text-2xl font-semibold text-teal-300">Cell Type Selection</h3>
+                    <p class="text-slate-300">Choose from available cell types to simulate perturbations in different cellular contexts. Each cell type has its own baseline expression profile.</p>
+            
+                    <h3 class="text-2xl font-semibold text-teal-300">Gene Knockout Simulation</h3>
+                    <p class="text-slate-300">Search and select any gene to perturb. The model predicts how knocking out that gene affects the expression of all other genes in the cell.</p>
+                </div>
+                <div class="space-y-8">
+                    <h3 class="text-2xl font-semibold text-teal-300">Cell State Projection</h3>
+                    <p class="text-slate-300">Visualize the predicted shift in cell state with a UMAP projection. See exactly how the perturbation moves the cell relative to the control population.</p>
+            
+                    <h3 class="text-2xl font-semibold text-teal-300">Expression Analysis</h3>
+                    <p class="text-slate-300">Explore results in a sortable, searchable table showing predicted changes across all genes. Filter to see only affected genes and identify the most impacted pathways.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================== Contact ================== -->
+    <section id="contact" class="py-24 px-6 bg-slate-900 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Get in Touch</h2>
+            <p class="text-lg text-slate-300 mb-8">Interested in collaborating, investing, or learning more? Reach out and let's go!</p>
+            <a href="mailto:maciej.piernik@gmail.com" class="inline-block px-8 py-3 rounded-full bg-gradient-to-r from-teal-500 to-blue-600 hover:from-teal-400 hover:to-blue-500 focus:outline-none focus:ring-4 focus:ring-teal-500/50 font-semibold transition">
+                maciej.piernik@gmail.com
+            </a>
+        </div>
+    </section>
+
+    <!-- ================== Footer ================== -->
+    <footer class="py-12 text-center text-sm text-slate-500 bg-slate-950 border-t border-slate-800">
+        © <span id="year"></span> nochronic. All rights reserved.
+    </footer>
+
+    <script>
+        // Update footer year automatically
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
